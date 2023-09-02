@@ -216,9 +216,6 @@ fn build_qemu_configure_args<P: AsRef<Path>>(build_path: P) -> Vec<String> {
     configure_args.push(format!("--target-list={}", get_target_list().join(",")));
 
     // Negative options
-    if cfg!(feature = "disable-default-features") {
-        configure_args.push("--disable-default-features".to_string());
-    }
 
     if cfg!(feature = "disable-default-devices") {
         configure_args.push("--disable-default-devices".to_string());
